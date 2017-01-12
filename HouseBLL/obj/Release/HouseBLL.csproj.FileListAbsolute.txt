@@ -1,0 +1,9 @@
+H:\DotNet\houseRent\HouseBLL\bin\Release\HouseBLL.dll
+H:\DotNet\houseRent\HouseBLL\bin\Release\HouseBLL.pdb
+H:\DotNet\houseRent\HouseBLL\bin\Release\HouseDAL.dll
+H:\DotNet\houseRent\HouseBLL\bin\Release\houseRent.dll
+H:\DotNet\houseRent\HouseBLL\bin\Release\HouseDAL.pdb
+H:\DotNet\houseRent\HouseBLL\bin\Release\houseRent.pdb
+H:\DotNet\houseRent\HouseBLL\obj\Release\HouseBLL.csprojResolveAssemblyReference.cache
+H:\DotNet\houseRent\HouseBLL\obj\Release\HouseBLL.dll
+H:\DotNet\houseRent\HouseBLL\obj\Release\HouseBLL.pdb

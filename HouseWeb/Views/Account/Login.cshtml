@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "登录";
+}
+@model houseRent.User
+<div id="login">
+    <h3>用户登录</h3>
+    <div class="loginForm">
+        @using (Html.BeginForm("Login","Account"))
+        {
+            @Html.ValidationSummary(true)
+            <p>
+                @Html.DisplayNameFor(model => model.LoginName)
+                @Html.TextBoxFor(model => model.LoginName)
+                @Html.ValidationMessageFor(model => model.LoginName)
+            </p>
+            <p>
+               @Html.DisplayNameFor(model => model.Password)
+               @Html.PasswordFor(model => model.Password)
+               @Html.ValidationMessageFor(model => model.Password)
+            </p>
+            <p class="btnBox">
+                <input type="submit" value="立即登录" class="buttons" />
+                <input type="button" value="注册" class="buttons" onclick="location.href='@Url.Action("Register")'"/>
+            </p>
+        }
+    </div>
+</div>

@@ -1,0 +1,7 @@
+H:\DotNet\houseRent\HouseDAL\bin\Debug\HouseDAL.dll
+H:\DotNet\houseRent\HouseDAL\bin\Debug\HouseDAL.pdb
+H:\DotNet\houseRent\HouseDAL\bin\Debug\houseRent.dll
+H:\DotNet\houseRent\HouseDAL\bin\Debug\houseRent.pdb
+H:\DotNet\houseRent\HouseDAL\obj\Debug\HouseDAL.csprojResolveAssemblyReference.cache
+H:\DotNet\houseRent\HouseDAL\obj\Debug\HouseDAL.dll
+H:\DotNet\houseRent\HouseDAL\obj\Debug\HouseDAL.pdb

@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "发布房屋信息";
+}
+@model houseRent.House
+@{
+    var labelCls = "width: 80px; text-align: right; display: inline-block";
+    var msgCls = "color: red";
+}
+<div class="dialog">
+    <div class="tit">
+        <span class="norTile">新房屋信息发布</span>
+        <span class="currTit">填写房屋信息</span>
+    </div>
+    <div class="box">
+        @using (Html.BeginForm())
+        {
+             @Html.HiddenFor(m=>m.HouseId);
+            <p>
+                @Html.LabelFor(m => m.Title, new { style = labelCls })
+                @Html.TextBoxFor(m=>m.Title)
+                @Html.ValidationMessageFor(m => m.Title, null, new { style = msgCls})
+            </p>
+            <p>
+                @Html.LabelFor(m => m.HouseType.Id, new { style = labelCls })
+                @Html.EditorFor(m=>m.HouseType)
+                @Html.ValidationMessageFor(m => m.HouseType.Id, null, new { style = msgCls })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Floorage, new { style = labelCls })
+                @(Html.EditorFor(m => m.Floorage))平米
+                @Html.ValidationMessageFor(m => m.Floorage, null, new { style = msgCls })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Price, new { style = labelCls })
+                @Html.EditorFor(m => m.Price)
+                @Html.ValidationMessageFor(m => m.Price, null, new { style = msgCls })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Street.District.Id, new { style = labelCls })
+                @Html.EditorFor(m => m.Street.District)区
+                @Html.ValidationMessageFor(m => m.Street.District.Id, null, new { style = msgCls })
+                @Html.EditorFor(m => m.Street)街
+                @Html.ValidationMessageFor(m => m.Street.Id, null, new { style = msgCls })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Contract, new { style = labelCls })
+                @Html.EditorFor(m => m.Contract)
+                @Html.ValidationMessageFor(m => m.Contract, null, new { style = msgCls })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Description, new { style = labelCls })
+                @Html.TextAreaFor(m => m.Description)
+                @Html.ValidationMessageFor(m => m.Description, null, new { style = msgCls })
+            </p>
+            <p style="height: 36px; width: 125px; margin: 30px 0 0 140px;">
+                <input type="submit" value="立即发布" class="buttons" />
+            </p>
+        }
+    </div>
+</div>
+<script type="text/javascript">
+    $().ready(function () {
+        $("#Street_District_Id").change(function () {
+            var id = $(this).val();
+            if (id > 0) {
+                $.getJSON("@Url.Action("GetStreet","House")", {
+                    'id': id
+                }, function (data) {
+                    $("#Street_Id").find("option").remove();
+                    $("#Street_Id").append($("<option value=''>--请选择--</option>"));
+                    $.each(data, function (i, item) {
+                        $("#Street_Id").append($("<option></option>").val(item["Id"]).text(item["Name"]));
+                    });
+                });
+
+            }
+        });
+    });
+</script>

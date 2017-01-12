@@ -1,0 +1,25 @@
+﻿@using HouseBLL;
+@using houseRent
+@{
+    List<Street> streets = ViewBag.Streets ?? null;
+    House house = ViewBag.House??null;
+    var selected = "";
+}
+<select class="selector" data-val="true"  data-val-required="请选择街道" id="Street_Id" name="Street.Id">
+    <option value="">--请选择--</option>
+    @if (streets != null)
+    {
+        foreach (var street in streets)
+        {
+            if (house != null && house.Street.Id == street.Id)
+            {
+                selected = "selected='selected'";
+            }
+            else
+            {
+                selected = "";
+            }
+            <option value="@street.Id" @Html.Raw(selected)>@street.Name</option>
+        }
+    }
+</select>
